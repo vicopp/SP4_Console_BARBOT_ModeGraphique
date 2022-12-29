@@ -4,6 +4,8 @@
  */
 package sp4_console_barbot;
 
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
@@ -14,7 +16,7 @@ public class CelluleGraphique extends JButton {
     
     CelluleDeGrille celluleAssociee;
     
-    
+    ImageIcon img_vide = new javax.swing.ImageIcon(getClass().getResource("/images/celluleVide.png"));
     
     
     public CelluleGraphique  (CelluleDeGrille uneCellule) {
@@ -22,6 +24,12 @@ public class CelluleGraphique extends JButton {
         
     }
     
+    
+    @Override
+    public void paintComponent (Graphics G) {
+        super.paintComponent (G);
+        setIcon(img_vide);
+    }
     
     
     
