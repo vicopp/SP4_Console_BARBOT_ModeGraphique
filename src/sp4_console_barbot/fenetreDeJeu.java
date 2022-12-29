@@ -9,12 +9,32 @@ package sp4_console_barbot;
  * @author victor
  */
 public class fenetreDeJeu extends javax.swing.JFrame {
+    
+    
+     private Joueur [] ListeJoueurs = new Joueur [2];
+     private Joueur joueurCourant;
+     private PlateauDeJeu plateau = new PlateauDeJeu ();
+    
 
     /**
      * Creates new form fenetreDeJeu
      */
     public fenetreDeJeu() {
         initComponents();
+        panneau_info_joueurs.setVisible(false);
+        panneau_info_partie.setVisible(false);
+        
+        
+        for (int i = 5; i<6; i++) {
+            for (int j =0 ;j<7;j++) {
+            
+           
+        
+                CelluleGraphique cellGraph = new CelluleGraphique();
+                panneau_grille.add(cellGraph);
+                
+            }
+        }
     }
 
     /**
@@ -155,6 +175,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_creation_partie.add(nom_joueur2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 130, -1));
 
         btn_start.setText("Demarrer la partie");
+        btn_start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_startActionPerformed(evt);
+            }
+        });
         panneau_creation_partie.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
 
         getContentPane().add(panneau_creation_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 30, 330, 160));
@@ -204,6 +229,13 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void btn_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_col4ActionPerformed
+
+    private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
+        // TODO add your handling code here:
+        
+        panneau_info_joueurs.setVisible(true);
+        panneau_info_partie.setVisible(true);
+    }//GEN-LAST:event_btn_startActionPerformed
 
     /**
      * @param args the command line arguments
