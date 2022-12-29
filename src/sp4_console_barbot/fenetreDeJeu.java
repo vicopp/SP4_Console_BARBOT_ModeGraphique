@@ -25,7 +25,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_info_partie.setVisible(false);
         
         
-        for (int i = 5; i<6; i++) {
+        for (int i = 5; i>=0; i--) {
             for (int j =0 ;j<7;j++) {
             
            
@@ -86,7 +86,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panneau_grille.setBackground(new java.awt.Color(51, 255, 204));
-        panneau_grille.setLayout(new java.awt.GridLayout());
+        panneau_grille.setLayout(new java.awt.GridLayout(6, 7));
         getContentPane().add(panneau_grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 672, 576));
 
         panneau_info_joueurs.setBackground(new java.awt.Color(255, 255, 153));
