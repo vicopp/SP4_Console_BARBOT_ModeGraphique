@@ -30,6 +30,18 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_info_joueurs = new javax.swing.JPanel();
         panneau_info_partie = new javax.swing.JPanel();
         panneau_creation_partie = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        nom_joueur1 = new java.awt.TextField();
+        nom_joueur2 = new java.awt.TextField();
+        btn_start = new javax.swing.JButton();
+        btn_col0 = new javax.swing.JButton();
+        btn_col1 = new javax.swing.JButton();
+        btn_col2 = new javax.swing.JButton();
+        btn_col3 = new javax.swing.JButton();
+        btn_col4 = new javax.swing.JButton();
+        btn_col5 = new javax.swing.JButton();
+        btn_col6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -48,10 +60,72 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         panneau_creation_partie.setBackground(new java.awt.Color(255, 255, 153));
         panneau_creation_partie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Nom joueur 1:");
+        panneau_creation_partie.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabel2.setText("Nom joueur 2:");
+        panneau_creation_partie.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, 30));
+
+        nom_joueur1.setName(""); // NOI18N
+        nom_joueur1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nom_joueur1ActionPerformed(evt);
+            }
+        });
+        panneau_creation_partie.add(nom_joueur1, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 20, 130, -1));
+        panneau_creation_partie.add(nom_joueur2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 130, -1));
+
+        btn_start.setText("Demarrer la partie");
+        panneau_creation_partie.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+
         getContentPane().add(panneau_creation_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 100, 330, 160));
+
+        btn_col0.setText("1");
+        btn_col0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col0ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_col0, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
+
+        btn_col1.setText("2");
+        getContentPane().add(btn_col1, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 60, -1, -1));
+
+        btn_col2.setText("3");
+        getContentPane().add(btn_col2, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 60, -1, -1));
+
+        btn_col3.setText("4");
+        getContentPane().add(btn_col3, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 60, -1, -1));
+
+        btn_col4.setText("5");
+        btn_col4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_col4, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 60, -1, -1));
+
+        btn_col5.setText("6");
+        getContentPane().add(btn_col5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, -1, -1));
+
+        btn_col6.setText("7");
+        getContentPane().add(btn_col6, new org.netbeans.lib.awtextra.AbsoluteConstraints(676, 60, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nom_joueur1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nom_joueur1ActionPerformed
+
+    private void btn_col0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col0ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_col0ActionPerformed
+
+    private void btn_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_col4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +163,18 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_col0;
+    private javax.swing.JButton btn_col1;
+    private javax.swing.JButton btn_col2;
+    private javax.swing.JButton btn_col3;
+    private javax.swing.JButton btn_col4;
+    private javax.swing.JButton btn_col5;
+    private javax.swing.JButton btn_col6;
+    private javax.swing.JButton btn_start;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private java.awt.TextField nom_joueur1;
+    private java.awt.TextField nom_joueur2;
     private javax.swing.JPanel panneau_creation_partie;
     private javax.swing.JPanel panneau_grille;
     private javax.swing.JPanel panneau_info_joueurs;
