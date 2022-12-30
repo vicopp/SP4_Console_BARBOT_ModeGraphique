@@ -19,10 +19,18 @@ public class Partie {
     private PlateauDeJeu plateau = new PlateauDeJeu ();
     
     
-    public Partie (Joueur joueur1, Joueur joueur2) {
+    public void nomJoueur () {
         
-        ListeJoueurs[0] = joueur1;
-        ListeJoueurs[1] = joueur2;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Choix du pseudo du joueur 1:");
+        Joueur J1 = new Joueur (sc.nextLine());
+        System.out.println("Choix du pseudo du joueur 2:");
+        Joueur J2 = new Joueur (sc.nextLine());
+        
+        
+        
+        ListeJoueurs[0] = J1;
+        ListeJoueurs[1] = J2;
         
         
     }
@@ -31,8 +39,9 @@ public class Partie {
     public void attriberCouleursAuxJoueurs () {
         
         Random r = new Random();
-        int n = r.nextInt(1);
-        if (n == 0) {
+        boolean couleur;
+        couleur = r.nextBoolean();
+        if (couleur) {
             
             ListeJoueurs[0].affecterCouleur("jaune");
             ListeJoueurs[1].affecterCouleur("rouge");
@@ -99,6 +108,7 @@ public class Partie {
         }
     }
     public void initialiserPartie() {
+        nomJoueur();
         attriberCouleursAuxJoueurs();
         placerTrousNoirsEtDesintegrateurs();
         creerEtAffecterJeton(ListeJoueurs[0]);
