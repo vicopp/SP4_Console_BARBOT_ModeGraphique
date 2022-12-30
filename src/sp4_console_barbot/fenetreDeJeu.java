@@ -62,7 +62,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         lbl_j2_couleur = new javax.swing.JLabel();
         lbl_j2_desint = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        lbl_j2_nom1 = new javax.swing.JLabel();
+        lbl_j2_nom = new javax.swing.JLabel();
         panneau_info_partie = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -131,8 +131,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         jLabel11.setText("Joueur 1:");
         panneau_info_joueurs.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
-        lbl_j2_nom1.setText("nomjoueur2");
-        panneau_info_joueurs.add(lbl_j2_nom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
+        lbl_j2_nom.setText("nomjoueur2");
+        panneau_info_joueurs.add(lbl_j2_nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
 
         getContentPane().add(panneau_info_joueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 220, 340, 310));
 
@@ -237,6 +237,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_info_joueurs.setVisible(true);
         panneau_info_partie.setVisible(true);
         initialiserPartie();
+        panneau_grille.repaint();
+        btn_start.setEnabled(false);
         
     }//GEN-LAST:event_btn_startActionPerformed
 
@@ -277,6 +279,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     
     
         public void nomJoueurs () {
+            
+        
 
          String nomJoueur1 = nom_joueur1.getText();
          Joueur J1 = new Joueur (nomJoueur1);
@@ -287,9 +291,19 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
          ListeJoueurs[0] = J1;
          ListeJoueurs[1] = J2;
+         
+        
 
          System.out.println(J1.nom + " est de couleur " + J1.couleur);
          System.out.println(J2.nom + " est de couleur " + J2.couleur);
+         
+         
+        lbl_j1_nom.setText(nomJoueur1);
+        lbl_j2_nom.setText(nomJoueur2);
+        lbl_j1_couleur.setText(J1.couleur);
+        lbl_j2_couleur.setText(J2. couleur);
+        lbl_j1_desint.setText(J1.nombreDesintegrateurs+"");
+        lbl_j2_desint.setText(J2.nombreDesintegrateurs+"");
          
          for (int i = 0; i < 21; i++) {
              J1.ajouterJeton(new Jeton (J1.couleur));
@@ -299,7 +313,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         }
 
     
-    
+        
 
 
         public void attriberCouleursAuxJoueurs () {
@@ -378,6 +392,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             placerTrousNoirsEtDesintegrateurs();
             creerEtAffecterJeton(ListeJoueurs[0]);
             creerEtAffecterJeton(ListeJoueurs[1]);
+            lbl_jcourant.setText(joueurCourant.nom);
         }
     
     
@@ -414,7 +429,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_j1_nom;
     private javax.swing.JLabel lbl_j2_couleur;
     private javax.swing.JLabel lbl_j2_desint;
-    private javax.swing.JLabel lbl_j2_nom1;
+    private javax.swing.JLabel lbl_j2_nom;
     private javax.swing.JLabel lbl_jcourant;
     private javax.swing.JTextArea message;
     private java.awt.TextField nom_joueur1;

@@ -16,7 +16,7 @@ public class Joueur {
     public String nom;
     public String couleur;
     private ArrayList <Jeton> reserveJetons = new ArrayList<>();
-    private int nombreDesintegrateurs;
+    public int nombreDesintegrateurs;
     
     
     public Joueur (String nom) {
