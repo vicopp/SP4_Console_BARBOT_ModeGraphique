@@ -19,7 +19,8 @@ public class Partie {
     private PlateauDeJeu plateau = new PlateauDeJeu ();
     
     
-    public void nomJoueur () {
+    public void nomJoueurs () {
+        
         
         Scanner sc = new Scanner(System.in);
         System.out.println("Choix du pseudo du joueur 1:");
@@ -108,7 +109,7 @@ public class Partie {
         }
     }
     public void initialiserPartie() {
-        nomJoueur();
+        nomJoueurs();
         attriberCouleursAuxJoueurs();
         placerTrousNoirsEtDesintegrateurs();
         creerEtAffecterJeton(ListeJoueurs[0]);

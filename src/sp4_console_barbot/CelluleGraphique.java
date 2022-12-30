@@ -17,6 +17,10 @@ public class CelluleGraphique extends JButton {
     CelluleDeGrille celluleAssociee;
     
     ImageIcon img_vide = new javax.swing.ImageIcon(getClass().getResource("/images/celluleVide.png"));
+    ImageIcon img_desint = new javax.swing.ImageIcon(getClass().getResource("/images/desintegrateur.png"));
+    ImageIcon img_jetonJaune = new javax.swing.ImageIcon(getClass().getResource("/images/jetonJaune.png"));
+    ImageIcon img_jetonRouge = new javax.swing.ImageIcon(getClass().getResource("/images/jetonRouge.png"));
+    ImageIcon img_trouNoir = new javax.swing.ImageIcon(getClass().getResource("/images/trouNoir.png"));
     
     
     public CelluleGraphique  (CelluleDeGrille uneCellule) {
@@ -27,6 +31,12 @@ public class CelluleGraphique extends JButton {
     
     @Override
     public void paintComponent (Graphics G) {
+        if (celluleAssociee.presenceTrouNoir() == true) {
+            setIcon(img_trouNoir);
+        } else if (celluleAssociee.presenceDesintegrateur() == true) {
+            setIcon(img_desint);
+        } else 
+            String couleur = celluleAssociee.lireCouleurDuJeton();
         super.paintComponent (G);
         setIcon(img_vide);
     }

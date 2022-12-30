@@ -276,7 +276,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
     
     
-    public void nomJoueur () {
+    public void nomJoueurs () {
         
         String nomJoueur1 = nom_joueur1.getText();
         Joueur J1 = new Joueur (nomJoueur1);
@@ -369,7 +369,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
     
     public void initialiserPartie() {
-        nomJoueur();
+        nomJoueurs();
         attriberCouleursAuxJoueurs();
         placerTrousNoirsEtDesintegrateurs();
         creerEtAffecterJeton(ListeJoueurs[0]);
