@@ -36,6 +36,15 @@ public class Partie {
         
     }
     
+    public void detPJoueur () {
+        Random r = new Random ();
+        boolean le_premier = r.nextBoolean ();
+        if (le_premier) {
+        joueurCourant = ListeJoueurs [0];
+        } else {
+        joueurCourant = ListeJoueurs [1];
+        }
+    }
     
     public void attriberCouleursAuxJoueurs () {
         
