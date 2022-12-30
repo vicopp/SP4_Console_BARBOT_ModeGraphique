@@ -276,117 +276,116 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
     
     
-    public void nomJoueurs () {
-        
-        String nomJoueur1 = nom_joueur1.getText();
-        Joueur J1 = new Joueur (nomJoueur1);
-        
-        String nomJoueur2 = nom_joueur2.getText();
-        Joueur J2 = new Joueur (nomJoueur2);
-        
-        
-        ListeJoueurs[0] = J1;
-        ListeJoueurs[1] = J2;
-        
-        System.out.println(J1.nom + " est de couleur " + J1.couleur);
-        System.out.println(J2.nom + " est de couleur " + J2.couleur);
-        
-    }
-    
-    
-    
-    
-    
-    public void attriberCouleursAuxJoueurs () {
-        
-        Random r = new Random();
-        boolean couleur;
-        couleur = r.nextBoolean();
-        if (couleur) {
-            
-            ListeJoueurs[0].affecterCouleur("jaune");
-            ListeJoueurs[1].affecterCouleur("rouge");
-            
-        } else {
-            ListeJoueurs[0].affecterCouleur("rouge");
-            ListeJoueurs[1].affecterCouleur("jaune");
-            
-        }
-    
-    }
-    
-    
-    public void placerTrousNoirsEtDesintegrateurs() {
-        Random L = new Random();
-        Random C = new Random();
-        for (int i = 0; i < 2; i++) {
-            int ligne = L.nextInt(0, 6);
-            int colonne = C.nextInt(0, 7);
-            if (plateau.presenceTrouNoir(ligne, colonne) == false && plateau.presenceDesintegrateur(ligne, colonne) == false) {
-                plateau.placerTrouNoir(ligne, colonne);
-            } else {
-                i -= 1;
-            }
-        }
-         for (int j = 0; j < 3; j++) {
-            int ligne = L.nextInt(0, 6);
-            int colonne = C.nextInt(0, 7);
-            if (plateau.presenceTrouNoir(ligne, colonne) == false && plateau.presenceDesintegrateur(ligne, colonne) == false) {
-                plateau.placerTrouNoir(ligne, colonne);
-                plateau.placerDesintegrateur(ligne, colonne);
-            } else {
-                j -= 1;
-            }
-        }
-        for (int k = 0; k < 2; k++) {
-            int ligne = L.nextInt(0, 6);
-            int colonne = C.nextInt(0, 7);
-            if (plateau.presenceDesintegrateur(ligne, colonne) == false &&plateau.presenceTrouNoir(ligne, colonne)==false) {
-                plateau.placerDesintegrateur(ligne, colonne);
-            } else {
-                k -= 1;
-            }
-        }
-    }
-    
-    public void creerEtAffecterJeton(Joueur joueur1){
+        public void nomJoueurs () {
 
-        if ("rouge".equals(joueur1.getCouleurJoueur())){  
-            for (int i=0;i<31;i++){
-                Jeton jeton = new Jeton ("rouge");
-                joueur1.ajouterJeton(jeton);
+         String nomJoueur1 = nom_joueur1.getText();
+         Joueur J1 = new Joueur (nomJoueur1);
 
-            }         
+         String nomJoueur2 = nom_joueur2.getText();
+         Joueur J2 = new Joueur (nomJoueur2);
+
+
+         ListeJoueurs[0] = J1;
+         ListeJoueurs[1] = J2;
+
+         System.out.println(J1.nom + " est de couleur " + J1.couleur);
+         System.out.println(J2.nom + " est de couleur " + J2.couleur);
+         
+         for (int i = 0; i < 21; i++) {
+             J1.ajouterJeton(new Jeton (J1.couleur));
+             J2.ajouterJeton(new Jeton (J2.couleur));
+            }
+
         }
 
-        if ("jaune".equals(joueur1.getCouleurJoueur())){
+    
+    
 
-            for (int i=0;i<31;i++){
-                Jeton jeton=new Jeton ("jaune");
-                joueur1.ajouterJeton(jeton);
+
+        public void attriberCouleursAuxJoueurs () {
+
+         Random r = new Random();
+         boolean couleur;
+         couleur = r.nextBoolean();
+         if (couleur) {
+
+             ListeJoueurs[0].affecterCouleur("jaune");
+             ListeJoueurs[1].affecterCouleur("rouge");
+
+         } else {
+             ListeJoueurs[0].affecterCouleur("rouge");
+             ListeJoueurs[1].affecterCouleur("jaune");
+            }
+
+        }
+
+
+        public void placerTrousNoirsEtDesintegrateurs() {
+            Random L = new Random();
+            Random C = new Random();
+            for (int i = 0; i < 2; i++) {
+                int ligne = L.nextInt(0, 6);
+                int colonne = C.nextInt(0, 7);
+                if (plateau.presenceTrouNoir(ligne, colonne) == false && plateau.presenceDesintegrateur(ligne, colonne) == false) {
+                 plateau.placerTrouNoir(ligne, colonne);
+                } else {
+                 i -= 1;
+                }
+            }
+            for (int j = 0; j < 3; j++) {
+                int ligne = L.nextInt(0, 6);
+                int colonne = C.nextInt(0, 7);
+                if (plateau.presenceTrouNoir(ligne, colonne) == false && plateau.presenceDesintegrateur(ligne, colonne) == false) {
+                 plateau.placerTrouNoir(ligne, colonne);
+                 plateau.placerDesintegrateur(ligne, colonne);
+                } else {
+                 j -= 1;
+                }
+            }
+            for (int k = 0; k < 2; k++) {
+                int ligne = L.nextInt(0, 6);
+                int colonne = C.nextInt(0, 7);
+                if (plateau.presenceDesintegrateur(ligne, colonne) == false &&plateau.presenceTrouNoir(ligne, colonne)==false) {
+                 plateau.placerDesintegrateur(ligne, colonne);
+                } else {
+                 k -= 1;
+                }
             }
         }
-    }
+
+        public void creerEtAffecterJeton(Joueur joueur1){
+
+            if ("rouge".equals(joueur1.getCouleurJoueur())){  
+                for (int i=0;i<31;i++){
+                 Jeton jeton = new Jeton ("rouge");
+                 joueur1.ajouterJeton(jeton);
+
+                }         
+            }
+
+            if ("jaune".equals(joueur1.getCouleurJoueur())){
+
+                for (int i=0;i<31;i++){
+                 Jeton jeton=new Jeton ("jaune");
+                 joueur1.ajouterJeton(jeton);
+                }
+            }
+        }
+
+        public void initialiserPartie() {
+            nomJoueurs();
+            attriberCouleursAuxJoueurs();
+            placerTrousNoirsEtDesintegrateurs();
+            creerEtAffecterJeton(ListeJoueurs[0]);
+            creerEtAffecterJeton(ListeJoueurs[1]);
+        }
     
-    public void initialiserPartie() {
-        nomJoueurs();
-        attriberCouleursAuxJoueurs();
-        placerTrousNoirsEtDesintegrateurs();
-        creerEtAffecterJeton(ListeJoueurs[0]);
-        creerEtAffecterJeton(ListeJoueurs[1]);
-        
-    }
     
     
     
     
     
-    
-    
-    
-    
-    
-    
+       
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_col0;

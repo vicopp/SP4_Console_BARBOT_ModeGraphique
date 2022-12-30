@@ -4,6 +4,7 @@
  */
 package sp4_console_barbot;
 
+
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,6 +14,8 @@ import javax.swing.JButton;
  * @author victor
  */
 public class CelluleGraphique extends JButton {
+    
+    
     
     CelluleDeGrille celluleAssociee;
     
@@ -25,22 +28,33 @@ public class CelluleGraphique extends JButton {
     
     public CelluleGraphique  (CelluleDeGrille uneCellule) {
         celluleAssociee = uneCellule;
-        
+  
     }
     
-    
     @Override
-    public void paintComponent (Graphics G) {
+    public void paintComponent(Graphics G) {
+        super.paintComponent(G);
         if (celluleAssociee.presenceTrouNoir() == true) {
             setIcon(img_trouNoir);
         } else if (celluleAssociee.presenceDesintegrateur() == true) {
             setIcon(img_desint);
-        } else 
-            String couleur = celluleAssociee.lireCouleurDuJeton();
-        super.paintComponent (G);
-        setIcon(img_vide);
+        } else {
+            String couleur_jeton = celluleAssociee.lireCouleurDuJeton();
+            switch (couleur_jeton) {
+                case "vide":
+                    setIcon(img_vide);
+                    break;
+                case "Rouge":
+                    setIcon(img_jetonRouge);
+                    break;
+                case "Jaune":
+                    setIcon(img_jetonJaune);
+                    break;
+
+            }
+
+        }
+
     }
-    
-    
-    
+ 
 }
