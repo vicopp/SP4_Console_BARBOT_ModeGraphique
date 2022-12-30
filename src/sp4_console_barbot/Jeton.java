@@ -11,7 +11,7 @@ package sp4_console_barbot;
  */
 public class Jeton {
     
-    private String couleur;
+    public String couleur;
     
     public Jeton (String Couleur) {
         couleur = Couleur;

@@ -150,6 +150,12 @@ public class PlateauDeJeu {
         
     }
     
+    void tasserGrille() {
+        for(int i =0; i<7; i++) {
+            tasserColonne(i);
+        }
+    }
+    
     public boolean colonneRemplie(int colonne) {
         
         return grille[5][colonne].lireCouleurDuJeton() != "vide";
